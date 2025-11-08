@@ -1,7 +1,0 @@
-RLHF Part 2 - Reward Models, DPO, Constitutional AI by Gheorghe Comanici
-
-This file is a placeholder. Please check with the instructor for the actual slides.
-
-Related Colab Labs:
-- Reward Models and DPO: https://colab.research.google.com/drive/1eeg_Bn3ONnAVPblLFN0OrSZIHCewtG-F?usp=sharing
-- DPO Lab: https://colab.research.google.com/drive/1yY0xMUQtMim2tsOlwGTn4vlZdn3MlDHM?usp=sharing
