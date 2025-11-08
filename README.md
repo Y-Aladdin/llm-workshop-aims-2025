@@ -1,4 +1,4 @@
-![Workshop Logo](assets/logo.png)
+![Workshop Logo](assets/training-is-all-you-need.png)
 
 # The Science and Engineering of Large Language Models (AIMS 2025)
 
