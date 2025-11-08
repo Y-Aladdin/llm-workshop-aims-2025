@@ -4,9 +4,9 @@
 
 **A community-driven repository for the workshop held at the African Institute for Mathematical Sciences (AIMS) in Muizenberg, Cape Town, from March 31 to April 11, 2025.**
 
-This repository contains lecture slides, lab notebooks, additional resources, and community notes for the "Science and Engineering of Large Language Models" workshop. It is intended to be a collaborative space for the 62 graduate students attending from across South Africa and Africa.
+This repository contains lecture slides, lab notebooks, additional resources, and community notes for the "Science and Engineering of Large Language Models" workshop.
 
-> The goal of the course -- apart from upskilling you to the forefront of LLM work -- is to allow different graduate students to get trained together, to work together, to socialize together, and to get to know each other across university boundaries. One day, some of you might venture into start-up land, or might write collaborative research papers, and it's in a course like this that you'll find like-minded peers!
+> The goal of the course -- apart from upskilling you to the forefront of LLM work -- is to allow different graduate students to get trained together, to work together, to socialize together, and to get to know each other across university boundaries.
 >
 > — *Ulrich Paquet, Director of AIMS*
 
@@ -14,98 +14,129 @@ This repository contains lecture slides, lab notebooks, additional resources, an
 
 ## Table of Contents
 
-- [About the Workshop](#about-the-workshop)
+- [Workshop Schedule](#workshop-schedule)
+- [Assignments](#assignments)
+- [Daily Materials & Lectures](#daily-materials--lectures)
 - [Essential Resources](#essential-resources)
-- [Full Workshop Schedule](#full-workshop-schedule)
-- [Daily Materials](#daily-materials)
 - [How to Contribute](#how-to-contribute)
-- [Acknowledgements](#acknowledgements)
 
 ---
 
-## About the Workshop
+## Workshop Schedule
 
-This intensive two-week course is taught by a team of research scientists and research engineers from **Google DeepMind**, led by **Amr Khalifa**. Practical sessions are supported by tutors from **Mila, Oxford, and UCL**. The workshop covers the full lifecycle of Large Language Models, from the foundational history and Transformer architecture to advanced topics like Mixture of Experts, scaling laws, and post-training techniques like RLHF.
+A high-level overview of the topics covered. For full details, see the [**Official PDF Schedule**](./schedule/workshop_schedule.pdf).
 
-- **Location:** AIMS, Muizenberg, Cape Town, South Africa
-- **Dates:** March 31, 2025 – April 11, 2025
+---
+
+## Assignments
+
+### Assignment 1 (Due Week 1)
+
+As explained by Amr Khalifa, you can choose one or both of the following tasks. A bonus is awarded for completing both.
+
+1.  **Theoretical Assignment:**
+    -   **[assignment_1_theoretical.pdf](./assignments/assignment_1_theoretical.pdf)**
+
+2.  **Practical Assignment:** Convert the GPT-2 style transformer from the lab into a Llama-like architecture.
+    -   **[assignment_1_practical_GPT-to-Llama.ipynb](./assignments/assignment_1_practical_GPT-to-Llama.ipynb)**
+    -   **Key Changes Required:**
+        1.  Implement **RMS Norm** instead of Layer Norm (both pre and post-normalization).
+        2.  Implement the **Gated MLP (SiLU/SwiGLU)** layer instead of the standard GELU activation.
+    -   **Recommended Reading:** [Llama 3 Architecture in JAX/Flax](https://saurabhalone.com/blogs/llama3/web)
+
+---
+
+## Daily Materials & Lectures
+
+### Day 1: Monday, 31 March
+*Topics: A Brief History of LLMs, Tokenization*
+*   **Lab:** Building a Transformer from Scratch (student version)
+    -   **[Notebook](./Day_01_Intro_and_Tokenization/lab_build_a_transformer.ipynb)**
+    -   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/[YOUR_USERNAME]/[YOUR_REPO_NAME]/blob/main/Day_01_Intro_and_Tokenization/lab_build_a_transformer.ipynb) <!-- TODO: Replace with your username and repo name! -->
+
+### Day 2: Tuesday, 1 April
+*Topics: The Transformer Architecture (Deep Dive)*
+*   *Materials from this day are foundational for the practical part of Assignment 1.*
+
+### Day 3: Wednesday, 2 April
+*Topics: Mixture of Experts (MoE), Diloco*
+*   **Lecture Slides:**
+    -   [Mixture of Experts (MoE)](./Day_03_Advanced_Architectures/slides_Mixture_of_Experts_Rusu.pdf) by Andrei Rusu
+    -   [Diloco](./Day_03_Advanced_Architectures/slides_Diloco_Rusu.pdf) by Andrei Rusu
+
+### Day 4: Thursday, 3 April
+*Topics: Scaling Laws, Optimizers, Training Dynamics, Single GPU Performance*
+*   **Lecture Slides:**
+    -   [Optimizers and Training Dynamics](./Day_04_Training_and_Optimization/slides_Optimizers_and_Dynamics_Ciuca.pptx) by Razvan Ciuca
+*   **Labs & Code:**
+    -   [Optimizers Lab (No Solutions)](./Day_04_Training_and_Optimization/lab_optimizers_no_solutions.ipynb)
+    -   [Scaling Laws Practical](https://colab.research.google.com/drive/1FSGEQye3O5I3V20DF-4qk1sPRXwNstXb?usp=sharing) (Colab Link)
+    -   [Optimized Transformer in JAX/Flax](./Day_04_Training_and_Optimization/code_optimized_transformer_jax.ipynb) by Amr Khalifa
+*   **Special Session:** AI Safety and AGI Discussion with Razvan Ciuca
+    -   [Link to Discussion Slides](https://docs.google.com/presentation/d/1CsxC3H2lYw3F2cADENblr7Guti0Y5Z61yqMSW_e33b4/edit?usp=sharing)
+    -   *Key Topics: Definitions of AGI, the power of language vs. embodiment, causality, existential risk, and the physical limits of computation.*
+
+### Day 5: Friday, 4 April
+*Topics: Sparsity, Quantization, Adaptors (LoRA)*
+*   **Lecture Slides:**
+    -   [Sparsity, Quantization & PEFT](./Day_05_Efficiency_and_Adaptation/slides_Sparsity_Quantization_PEFT_Evci.pdf) by Utku Evci
+*   **Labs:**
+    -   [Quantization & Sparsity Lab](https://colab.research.google.com/drive/139pba-qNatuB4kW7TDmPY7sVk_MtkXp4?usp=sharing) (Colab Link)
+    -   [Quantized Transformer Lab](https://colab.research.google.com/drive/1hLB_kzUvkyNFdQU15FkLdJnXE4cFAPUS?usp=sharing) (Colab Link)
+    -   [LoRA from Scratch](./Day_05_Efficiency_and_Adaptation/lab_lora_from_scratch.ipynb) by Dereck
+
+### Day 7: Monday, 7 April
+*Topics: Post-training, Instruction Tuning, Chain-of-Thought (CoT)*
+*   **Lecture Slides:**
+    -   [Instruction Tuning](./Day_07_Post_Training_Instruction_Tuning/slides_Instruction_Tuning_Singh.pdf) by Jerry Singh
+    -   [Emergent Abilities & CoT](./Day_07_Post_Training_Instruction_Tuning/slides_Emergent_Abilities_and_CoT_Singh.pdf) by Jerry Singh
+
+### Day 8: Tuesday, 8 April
+*Topics: Scaling LLMs, Roofline Models, Profiling, RLHF Introduction*
+*   **Lecture Slides:**
+    -   [Post Training: Alignment and RLHF (Part 1)](./Day_08_Scaling_and_Alignment_Part1/slides_RLHF_Part1_Comanici.pdf) by Gheorghe Comanici
+*   **Labs:**
+    -   [Scaling Lab: Rooflines & Profiling](./Day_08_Scaling_and_Alignment_Part1/lab_scaling_rooflines_and_profiling.ipynb)
+    -   [RLHF Part 1 Lab](https://colab.research.google.com/drive/1bcDAkaAlzeQ0_C9VXS5xurKhe03iPo8_?usp=sharing) (Colab Link)
+
+### Day 9: Wednesday, 9 April
+*Topics: Sharded Matmuls, RLHF/DPO*
+*   **Lecture Slides:**
+    -   [Post Training: Reward Models, DPO, Constitutional AI (Part 2)](./Day_09_Scaling_and_Alignment_Part2/slides_RLHF_Part2_Comanici.pdf) by Gheorghe Comanici
+*   **Labs:**
+    -   [Sharding Lab](https://colab.research.google.com/drive/1p8bgzfzqh516F1_grWwFEMQTtI7fbxB2?usp=sharing) (Colab Link)
+    -   [RLHF Lab 2: Reward Models](https://colab.research.google.com/drive/1eeg_Bn3ONnAVPblLFN0OrSZIHCewtG-F?usp=sharing) (Colab Link)
+    -   [DPO Lab](https://colab.research.google.com/drive/1yY0xMUQtMim2tsOlwGTn4vlZdn3MlDHM?usp=sharing) (Colab Link)
+
+### Day 10: Thursday, 10 April
+*Topics: Scaling Systems for LLMs (Full)*
+*   **Lecture Slides:**
+    -   [Scaling Systems for LLMs (Full Deck)](./Day_10_Scaling_Systems/slides_Scaling_Systems_for_LLMs_Full_Rrustemi.pdf) by Alban Rrustemi
 
 ---
 
 ## Essential Resources
 
-These resources were recommended by the lecturers to supplement the course material.
-
 ### Foundational Concepts & Building LLMs
+*   **Book:** [Build a Large Language Model (from Scratch)](https://www.manning.com/books/build-a-large-language-model-from-scratch) by Sebastian Raschka
+*   **PyTorch Playlist:** [Video series that complements the book](https://www.youtube.com/playlist?list=PLTKMiZHVd_2IIEsoJrWACkIxLRdfMlw11)
 
-*   **Build a Large Language Model from Scratch:**
-    *   📖 **Book:** [Build a Large Language Model (from Scratch) by Sebastian Raschka](https://www.manning.com/books/build-a-large-language-model-from-scratch)
-    *   📺 **PyTorch Playlist:** A helpful video series that complements the book. [Link to Playlist](https://www.youtube.com/playlist?list=PLTKMiZHVd_2IIEsoJrWACkIxLRdfMlw11)
+### Deep Learning Theory & Math
+*   **Deep Learning Book:** by Goodfellow, Bengio, and Courville - [www.deeplearningbook.org](https://www.deeplearningbook.org/)
+*   **Probabilistic Machine Learning:** by Kevin Murphy - [Book 1 (Intro)](https://probml.github.io/pml-book/book1.html) & [Book 2 (Advanced)](https://probml.github.io/pml-book/book2.html)
 
 ### Visualizations & Intuition
+*   **3Blue1Brown - Attention:** [Excellent visualizations for core concepts](https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=9EKPbNdknD_dwhde) (recommended from video #5 onwards).
+*   **Attention Video:** [A highly-praised video explaining the attention mechanism](https://youtu.be/-9vVhYEXeyQ).
 
-*   **3Blue1Brown - Neural Networks & Attention:**
-    *   📺 Excellent visualizations for core concepts. It's recommended to watch from video #5 onwards. [Link to Playlist](https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=9EKPbNdknD_dwhde)
-*   **The Best Explanation for Attention:**
-    *   📺 A highly-praised video explaining the attention mechanism. [Link to Video](https://youtu.be/-9vVhYEXeyQ)
-
-### Pre-Transformer Era & Deep Learning Practicals
-
-*   **Stanford CS224n:**
-    *   🎓 To understand neural language modeling before Transformers, watch the [Stanford CS224n course lectures](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z) and attempt the assignments.
-*   **Deep Learning Indaba Practicals:**
-    *   💻 [Introduction to Machine Learning using JAX](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/jax_intro/README.md)
-    *   💻 [Foundations of LLMs](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/foundations_of_llms/README.md)
-
----
-
-## Full Workshop Schedule
-
-*A high-level overview of the topics covered each day. You can also view the [**full PDF schedule**](./schedule/workshop_schedule.pdf).*
-
-| Date                | Time          | Activity | Session Details                                            | Instructor(s)        |
-|---------------------|---------------|----------|------------------------------------------------------------|----------------------|
-| **Mon, 31 Mar**     | 09:00 - 13:00 | Lecture  | A very brief history of LLMs (word2vec to transformer)     | Amr Khalifa          |
-|                     | 14:00 - 18:00 | Lab      | Tokenization lecture and lab                               | TA: Makki            |
-| **Tue, 1 Apr**      | 09:00 - 18:00 | Lecture/Lab | The transformer architecture, coding attention & dense transformers | Amr Khalifa + TAs    |
-| **Wed, 2 Apr**      | 09:00 - 18:00 | Lecture/Lab | Pre-training, training loops, Mixture of Experts (MoE)     | Amr, Andrei Rusu, etc.|
-| **Thu, 3 Apr**      | 09:00 - 18:00 | Lecture/Lab | Scaling Laws, Optimizers, Diloco                           | Kelvin Xu, Razvan, Andrei |
-| **Fri, 4 Apr**      | 09:00 - 18:00 | Lecture/Lab | Sparsity, Quantization, Adaptors / LoRA                    | Utku Evci, Dereck, Raz |
-| **Sat & Sun, 5-6 Apr** | -             | -        | *Weekend Activities!*                                      | -                    |
-| **Mon, 7 Apr**      | 09:00 - 18:00 | Lecture/Lab | Post-training: Instruction Tuning, SFT, CoT prompting      | Avi Singh, Jerry     |
-| **Tue, 8 Apr**      | 09:00 - 18:00 | Lecture/Lab | Scaling LLMs, Roofline models, Post-training: RLHF         | Alban, Amr, Gheorghe |
-| **Wed, 9 Apr**      | 09:00 - 18:00 | Lecture/Lab | Scaling LLMs, Sharded matmuls, Post-training: RLHF/DPO     | Amr, Gheorghe, Eltayeb|
-| **Thu, 10 Apr**     | 09:00 - 18:00 | Lecture/Lab | Scaling LLMs, Profiling, Serving LLMs, Data parallelism    | Alban, Amr, Rrustemi |
-| **Fri, 11 Apr**     | 09:00 - 13:00 | Lecture/Lab | Scaling LLMs part 4, Fully Sharded Data Parallel (FSDP)    | Alban Rrustemi, Amr  |
-
----
-
-## Daily Materials
-
-*This section will link to the slides and notebooks for each day of the workshop.*
-
-*   **[Day 01: A Brief History of LLMs & The Transformer Architecture](./Day_01-History_and_Transformers/)**
-*   **[Day 02: Pre-training and Improving Training Efficiency](./Day_02-Training_and_Optimization/)**
-*   **[Day 03: Advanced Architectures - MoE & Scaling Laws](./Day_03-Advanced_Architectures/)**
-*   **[Day 04: Sparsity, Quantization, and LoRA](./Day_04-Adaptation_and_Efficiency/)**
-*   ... *(links will be added as materials become available)*
+### Other Courses & Practicals
+*   **Stanford CS224n:** [Course on NLP with Deep Learning](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z).
+*   **Deep Learning Indaba Practicals:** [JAX Intro](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/jax_intro/README.md) & [Foundations of LLMs](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/foundations_of_llms/README.md).
 
 ---
 
 ## How to Contribute
 
-This is a repository for all attendees. If you have notes you'd like to share, find a typo, or want to add a helpful resource, please feel free to:
-1.  **Open an Issue:** Discuss a change or report an error.
-2.  **Submit a Pull Request:** Fork the repository, make your changes, and submit a pull request!
-
-Please keep all contributions respectful and aligned with the collaborative spirit of the workshop.
+This is a repository for all attendees. If you have notes, find a typo, or want to add a resource, please feel free to open an Issue or submit a Pull Request!
 
 ---
-
-## Acknowledgements
-
-A huge thank you to the organizers and sponsors who made this workshop possible:
-- **AIMS South Africa**
-- **Google DeepMind**
-- **South Africa's Department of Science and Innovation (DSI)**
-- All the lecturers, tutors, and staff involved.
