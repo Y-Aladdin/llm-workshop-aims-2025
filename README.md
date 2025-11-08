@@ -131,7 +131,7 @@ As explained by Amr Khalifa, you can choose one or both of the following tasks. 
 
 ### Other Courses & Practicals
 *   **Stanford CS224n:** [Course on NLP with Deep Learning](https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z).
-*   **Deep Learning Indaba Practicals:** [JAX Intro](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/jax_intro/README.md) & [Foundations of LLMs](https://github.com/deep-learning-indaba/indaba-pracs-2023/blob/main/foundations_of_llms/README.md).
+*   **Deep Learning Indaba Practicals:** [JAX Intro](https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Intro_to_ML_using_JAX/Introduction_to_ML_using_JAX.ipynb) & [Foundations of LLMs](https://github.com/deep-learning-indaba/indaba-pracs-2024/blob/main/practicals/Foundations_of_LLMs/foundations_of_llms_practical.ipynb).
 
 ---
 
